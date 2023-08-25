@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from'./components/TextForm'
-import About from "./components/About";
+// import About from "./components/About";
 import Alert from "./components/Alert";
 // let name = "Shobhit";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     setTimeout(() => {
       setAlert(null);
     }, 1000);
-  };
+  }; 
 
   const toggleMode = () => {
     if (mode === "light") {
@@ -58,30 +58,32 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Navbar
-          title="TextUtils2"
+          title="TextUtils"
           aboutText="TextAbouts"
           mode={mode}
           toggleMode={toggleMode}
+          toggleMode1={toggleMode1}
+
         />
         <Alert alert={alert} />
         <div className="container my-4" mode={mode}>
-          <Routes>
-            <Route exact path="/about" element={<About />}></Route>
-            <Route
+          {/* <Routes> */}
+            {/* <Route exact path="/about" element={<About />}></Route> */}
+            {/* <Route
               exact path="/"
-              element={
+              element={ */}
                 <TextForm
                   showAlert={showAlert}
-                  heading="Enter Text to analyze "
+                  heading="TextUtils - Word Counter , Character Counter  "
                   mode={mode}
                 />
-              }
-            ></Route>
-          </Routes>
+              {/* // }
+            // ></Route> */}
+          {/* </Routes> */}
         </div>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 }
